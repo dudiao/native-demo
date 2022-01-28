@@ -62,6 +62,11 @@
                             <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
                         </env>
                     </image>
+                    <docker>
+                        <publishRegistry>
+                            <url>https://index.docker.io/v1/</url>
+                        </publishRegistry>
+                    </docker>
                 </configuration>
             </plugin>
             <plugin>
