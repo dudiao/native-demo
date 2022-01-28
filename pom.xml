@@ -55,6 +55,8 @@
                     </excludes>
                     <classifier>${repackage.classifier}</classifier>
                     <image>
+                        <name>dudiao/${project.artifactId}:${project.version}</name>
+                        <publish>true</publish>
                         <builder>paketobuildpacks/builder:tiny</builder>
                         <env>
                             <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
