@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: nativedemo
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:db/nativedemo.db
+    username: nativedemo
+    password: Hello.nativedemo
+  sql:
+    init:
+      schema-locations: classpath*:init/schema/*.sql
+      data-locations: classpath*:init/data/*.sql
+      mode: always
