@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<springProperty scop="context" name="appName" source="spring.application.name" defaultValue=""/>
-	<springProperty scop="context" name="maxHistory" source="logging.max-history" defaultValue="60"/>
-	<springProperty scop="context" name="maxFileSize" source="logging.max-file-size" defaultValue="512MB"/>
-	<springProperty scop="context" name="totalSizeCap" source="logging.total-size-cap" defaultValue="1GB"/>
+	<springProperty scop="context" name="maxHistory" source="logging.logback.rollingpolicy.max-history" defaultValue="90"/>
+	<springProperty scop="context" name="maxFileSize" source="logging.logback.rollingpolicy.max-file-size" defaultValue="20MB"/>
+	<springProperty scop="context" name="totalSizeCap" source="logging.logback.rollingpolicy.total-size-cap" defaultValue="1GB"/>
 	<springProperty scop="context" name="log.path" source="logging.file.path" defaultValue="logs" />
 	<!-- 彩色日志格式 -->
 	<property name="CONSOLE_LOG_PATTERN"
