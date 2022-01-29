@@ -12,3 +12,6 @@ spring:
       schema-locations: classpath*:init/schema/*.sql
       data-locations: classpath*:init/data/*.sql
       mode: always
+logging:
+  file:
+    name: logs/${spring.application.name}.log
