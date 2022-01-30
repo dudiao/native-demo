@@ -19,6 +19,7 @@
         <spring-native.version>0.11.2</spring-native.version>
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <dockerhub.url>https://index.docker.io/v1/</dockerhub.url>
+        <maven.test.skip>true</maven.test.skip>
     </properties>
     <dependencies>
         <dependency>
