@@ -91,7 +91,7 @@ public class VersionDataSourceScriptDatabaseInitializer extends SqlDataSourceScr
       log.error("update sql version fail, sql type is [{}]", sqlType);
     }
     stopWatch.stop();
-    log.info("execute {} sql scripts: {}, took {} ms", sqlType, resources.size(), stopWatch.getTotalTimeMillis());
+    log.info("execute [{}] sql scripts: {}, took {} ms", sqlType, resources.size(), stopWatch.getTotalTimeMillis());
     if (log.isDebugEnabled()) {
       log.debug("detail info: \n{}", stopWatch.prettyPrint());
     }
