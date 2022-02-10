@@ -35,4 +35,4 @@ jobs:
       env: # Or as an environment variable
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-      run: mvn clean -U spring-boot:build-image --file pom.xml
+      run: mvn clean -U spring-boot:build-image --file pom.xml --no-transfer-progress
