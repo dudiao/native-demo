@@ -39,11 +39,11 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis-spring.version}</version>
-        </dependency>-->
+        </dependency>
         <!-- MyBatis integration with Spring Native feature -->
         <dependency>
             <groupId>org.mybatis.spring.native</groupId>
