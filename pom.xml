@@ -18,6 +18,7 @@
         <repackage.classifier/>
         <spring-native.version>0.11.2</spring-native.version>
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis-spring.version>2.0.7</mybatis-spring.version>
         <dockerhub.url>https://index.docker.io/v1/</dockerhub.url>
         <maven.test.skip>true</maven.test.skip>
     </properties>
@@ -37,6 +38,11 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
         </dependency>
         <!-- MyBatis integration with Spring Native feature -->
         <dependency>
