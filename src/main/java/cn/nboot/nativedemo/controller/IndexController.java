@@ -17,7 +17,7 @@ public class IndexController {
     return String.format("success! time %s", LocalDateTime.now());
   }
 
-  @GetMapping("/{msg}")
+  @GetMapping("/msg/{msg}")
   public String msg(@PathVariable(value = "msg", required = false)
                             String msg) {
     return String.format("success! time %s, msg: %s", LocalDateTime.now(), msg);

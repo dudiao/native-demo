@@ -16,7 +16,7 @@ public class ApplicationStartingListener implements ApplicationListener<Applicat
   public void onApplicationEvent(ApplicationPreparedEvent event) {
     File file = new File("db");
     if (!file.exists()) {
-      file.mkdirs();
+//      file.mkdirs();
       log.info("create db path: {}", file.getAbsolutePath());
     }
   }
