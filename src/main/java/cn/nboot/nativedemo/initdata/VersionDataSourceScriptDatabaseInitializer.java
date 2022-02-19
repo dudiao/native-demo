@@ -7,6 +7,8 @@ import org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer;
 import org.springframework.core.io.Resource;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.nativex.hint.NativeHint;
+import org.springframework.nativex.hint.ResourceHint;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StopWatch;
@@ -23,6 +25,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Slf4j
 @Component
+@NativeHint(resources = {@ResourceHint(patterns = {"classpath*:init/schema/*.sql", "classpath*:init/data/*.sql"})})
 public class VersionDataSourceScriptDatabaseInitializer extends SqlDataSourceScriptDatabaseInitializer {
 
   /**
