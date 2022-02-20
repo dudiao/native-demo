@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Slf4j
 @Component
-@NativeHint(resources = {@ResourceHint(patterns = {"classpath*:init/schema/*.sql", "classpath*:init/data/*.sql"})})
+@NativeHint(resources = {@ResourceHint(patterns = {"init/schema/*.sql", "init/data/*.sql"})})
 public class VersionDataSourceScriptDatabaseInitializer extends SqlDataSourceScriptDatabaseInitializer {
 
   /**
