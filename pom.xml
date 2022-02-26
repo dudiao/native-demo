@@ -35,7 +35,9 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- 代替 tomcat-embed-core 和依赖 tomcat-embed-websocket，以优化占用空间 -->
+        <!-- 代替 tomcat-embed-core 和依赖 tomcat-embed-websocket，以优化占用空间
+         但似乎可以通过优化的本机配置和附加替换来达到与默认值相似甚至更低的占用空间，
+         https://github.com/spring-projects-experimental/spring-native/issues/1426 -->
         <dependency>
             <groupId>org.apache.tomcat.experimental</groupId>
             <artifactId>tomcat-embed-programmatic</artifactId>

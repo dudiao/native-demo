@@ -1,1 +1,4 @@
 org.springframework.context.ApplicationListener=cn.nboot.nativedemo.event.ApplicationStartingListener
+
+org.springframework.nativex.type.NativeConfiguration=\
+  cn.nboot.nativedemo.initdata.VersionDataSourceScriptHints
