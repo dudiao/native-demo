@@ -34,4 +34,4 @@ build/
 
 ### other ###
 logs
-db
+/db
