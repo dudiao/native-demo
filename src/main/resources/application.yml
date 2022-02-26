@@ -18,6 +18,7 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    open-in-view: true
   h2:
     console:
       enabled: true
@@ -26,3 +27,5 @@ spring:
 logging:
   file:
     name: logs/${spring.application.name}.log
+server:
+  port: 8080

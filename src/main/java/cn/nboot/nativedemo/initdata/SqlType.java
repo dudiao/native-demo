@@ -29,8 +29,9 @@ public enum SqlType {
   private String type;
 
   public static SqlType getSqlType(long index) {
+    long newIndex = index % 2;
     for (SqlType value : values()) {
-      if (value.index == index) {
+      if (value.index == newIndex) {
         return value;
       }
     }
