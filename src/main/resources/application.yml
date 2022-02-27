@@ -9,8 +9,8 @@ spring:
     password: Hello.nativedemo
   sql:
     init:
-      schema-locations: classpath*:db/schema/*.sql
-      data-locations: classpath*:db/data/*.sql
+      schema-locations: classpath*:cn/nboot/nativedemo/initdata/schema/*.sql
+      data-locations: classpath*:cn/nboot/nativedemo/initdata/data/*.sql
       mode: always
   jpa:
     show-sql: true
