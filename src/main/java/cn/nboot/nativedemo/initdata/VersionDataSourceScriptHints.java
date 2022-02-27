@@ -17,6 +17,8 @@ public class VersionDataSourceScriptHints implements NativeConfiguration {
   @Override
   public void computeHints(NativeConfigurationRegistry registry, AotOptions aotOptions) {
     log.info("start read sql script: db/*/*.sql");
-    registry.resources().add(NativeResourcesEntry.of("db/*/*.sql"));
+    System.out.println("start read sql script: db/data/*.sql, db/schema/*.sql");
+    registry.resources().add(NativeResourcesEntry.of("db/data/*.sql"))
+        .add(NativeResourcesEntry.of("db/schema/*.sql"));
   }
 }
