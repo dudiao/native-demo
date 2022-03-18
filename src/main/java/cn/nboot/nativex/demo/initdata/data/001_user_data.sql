@@ -1,0 +1,1 @@
+insert into nd_user(id, name, email, wechat_openid, description, create_time) values ('1', '系统管理员', 'admin@nboot.cn', 'xxx', '内置用户', CURRENT_TIMESTAMP);
