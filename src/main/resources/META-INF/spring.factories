@@ -1,0 +1,2 @@
+org.springframework.nativex.type.NativeConfiguration=\
+  cn.nboot.nativex.demo.initdata.VersionDataSourceScriptHints

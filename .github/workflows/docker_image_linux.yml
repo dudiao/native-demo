@@ -1,7 +1,4 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
+name: docker image linux
 
 on:
   workflow_dispatch: 
@@ -12,9 +9,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: GitHub Action for GraalVM JDK 11
@@ -22,7 +17,6 @@ jobs:
       with:
         version: 22.0.0.2
         java-version: 11
-
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
@@ -30,7 +24,6 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-
     - name: Build with Maven
       env: # Or as an environment variable
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}

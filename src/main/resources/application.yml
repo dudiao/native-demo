@@ -13,8 +13,9 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     open-in-view: false
-  flyway:
-    enabled: true
+  thymeleaf:
+    mode: HTML
+    suffix: .html
   h2:
     console:
       enabled: false
