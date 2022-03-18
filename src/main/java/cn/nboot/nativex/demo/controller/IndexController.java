@@ -1,7 +1,5 @@
 package cn.nboot.nativex.demo.controller;
 
-import cn.nboot.nativex.demo.initdata.VersionDataSourceScriptDatabaseInitializer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,9 +13,6 @@ import java.util.List;
  */
 @RestController
 public class IndexController {
-
-  @Autowired
-  private VersionDataSourceScriptDatabaseInitializer versionDataSourceScriptDatabaseInitializer;
 
   @GetMapping("/")
   public String index() {
@@ -33,12 +28,6 @@ public class IndexController {
   @GetMapping("/ids")
   public String ids(@RequestBody List<String> ids) {
     return String.format("success!ids: %s", ids);
-  }
-
-  @GetMapping("/init-data")
-  public String initData() {
-    boolean result = versionDataSourceScriptDatabaseInitializer.initializeDatabase();
-    return String.format("schema and data result = %s", result);
   }
 
 }
