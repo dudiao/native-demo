@@ -1,6 +1,6 @@
 create table nd_user
 (
-    id            varchar(64) NOT NULL PRIMARY KEY,
+    id            IDENTITY NOT NULL PRIMARY KEY,
     name          varchar(48) NULL DEFAULT '',  -- 姓名
     email         varchar(128) NULL DEFAULT '', -- 邮箱
     wechat_openid varchar(128) NULL DEFAULT '', -- 微信OpenId
