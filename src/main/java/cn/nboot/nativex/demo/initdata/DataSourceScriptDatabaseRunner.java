@@ -34,7 +34,7 @@ public class DataSourceScriptDatabaseRunner implements ApplicationRunner {
     stopWatch.start("execute sql script");
     ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
     populator.setContinueOnError(true);
-    String sql = "db/migration/V1__nd_user.sql";
+    String sql = "initsql/V1__nd_user.sql";
     ClassPathResource resource = new ClassPathResource(sql);
     populator.addScript(resource);
     DatabasePopulatorUtils.execute(populator, this.dataSource);
