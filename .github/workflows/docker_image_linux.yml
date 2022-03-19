@@ -2,8 +2,8 @@ name: docker image linux
 
 on:
   workflow_dispatch: 
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
 

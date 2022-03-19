@@ -31,3 +31,12 @@ jobs:
       with:
         name: native-demo
         path: target/native-demo
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        source: "target/native-demo"
+        target: "/opt/dudiao/nativedemo/latest/"

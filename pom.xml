@@ -18,12 +18,17 @@
 		<repackage.classifier/>
 		<spring-native.version>0.11.3</spring-native.version>
 		<dockerhub.url>https://index.docker.io/v1/</dockerhub.url>
-		<maven.test.skip>true</maven.test.skip>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>io.micrometer</groupId>
+					<artifactId>micrometer-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -32,6 +37,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-websocket</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.experimental</groupId>
+			<artifactId>tomcat-embed-programmatic</artifactId>
+			<version>${tomcat.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.experimental</groupId>
@@ -208,6 +228,10 @@
 								</goals>
 							</execution>
 						</executions>
+						<configuration>
+							<removeYamlSupport>true</removeYamlSupport>
+							<removeJmxSupport>true</removeJmxSupport>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
