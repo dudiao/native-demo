@@ -33,5 +33,5 @@ build/
 .vscode/
 
 ### other ###
-logs
-db
+/logs
+/db

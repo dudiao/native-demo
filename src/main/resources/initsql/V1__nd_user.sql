@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS nd_user;
-
 create table nd_user
 (
     id            varchar(64) NOT NULL PRIMARY KEY,

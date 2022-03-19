@@ -3,7 +3,7 @@ spring:
     name: nativedemo
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:/nativexdb/nativedemo
+    url: jdbc:h2:file:./db/nativedemo
     username: nativedemo
     password: Hello.nativedemo
   jpa:

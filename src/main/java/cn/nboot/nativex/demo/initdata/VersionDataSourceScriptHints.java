@@ -9,7 +9,7 @@ import org.springframework.nativex.type.NativeConfiguration;
  * @since 2022/3/19 00:51
  */
 @NativeHint(trigger = DataSourceScriptDatabaseRunner.class,
-    resources = @ResourceHint(patterns = {"db/migration/*.sql"}))
+    resources = @ResourceHint(patterns = {"initsql/*.sql"}))
 public class VersionDataSourceScriptHints implements NativeConfiguration {
 
 }
