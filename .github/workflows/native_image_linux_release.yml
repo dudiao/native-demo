@@ -43,4 +43,3 @@ jobs:
         files: target/native-demo-*.jar
         prerelease: true
         token: ${{ secrets.GH_TOKEN }}
-        name: native-demo-${{ runner.os }}-${{ steps.create_release.outputs.tag }}.jar
