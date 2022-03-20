@@ -91,7 +91,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>${project.artifactId}-${project.version}-${os.arch}</finalName>
+		<finalName>${project.artifactId}-${project.version}-${os.name}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
