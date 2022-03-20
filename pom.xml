@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>cn.nboot.native</groupId>
 	<artifactId>native-demo</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>native-demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
