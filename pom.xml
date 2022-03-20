@@ -116,7 +116,9 @@
 					</excludes>
 					<classifier>${repackage.classifier}</classifier>
 					<image>
+						<!--镜像名称-->
 						<name>dudiao/${project.artifactId}:${project.version}</name>
+						<!--构建完镜像后发布-->
 						<publish>true</publish>
 						<builder>paketobuildpacks/builder:tiny</builder>
 						<env>
@@ -124,6 +126,7 @@
 						</env>
 					</image>
 					<docker>
+						<!--docker中央信息-->
 						<publishRegistry>
 							<url>${dockerhub.url}</url>
 							<username>${env.DOCKERHUB_USERNAME}</username>
@@ -232,9 +235,12 @@
 							</execution>
 						</executions>
 						<configuration>
+							<!--移除对yaml的支持-->
 							<removeYamlSupport>true</removeYamlSupport>
+							<!--移除对jmx的支持-->
 							<removeJmxSupport>true</removeJmxSupport>
-							<imageName>nd-${project.artifactId}-${project.version}-${os.arch}</imageName>
+							<!--可执行文件的名字-->
+							<imageName>nd-${project.artifactId}-${project.version}</imageName>
 						</configuration>
 					</plugin>
 				</plugins>

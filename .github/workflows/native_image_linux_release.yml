@@ -43,7 +43,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3.0.0
       with:
-        name: native-demo
+        name: native-demo-${{ matrix.os }}.zip
         path: native-demo-${{ matrix.os }}.zip
     # GitHub 上创建 release
     - name: Release

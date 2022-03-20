@@ -6,10 +6,11 @@
 
 ```
 docker run -d -p 8080:8080 --name native-demo \
--v /opt/docker/nativedemo/db:/workspace/db \
 -v /opt/docker/nativedemo/logs:/workspace/logs \
 -v /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime \
 dudiao/native-demo:0.0.1-SNAPSHOT
 ```
 
-访问：`http://ip:8080/user/list`
+- 用户接口：`http://ip:8080/user/list`
+- 用户页面：`http://ip:8080/user`
+- 新增用户：`POST http://ip:8080/user/add`
