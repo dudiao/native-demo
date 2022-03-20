@@ -92,7 +92,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>${project.artifactId}-${project.version}-${os.arch}</finalName>
+		<finalName>${project.artifactId}-${project.version}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -233,6 +233,7 @@
 						<configuration>
 							<removeYamlSupport>true</removeYamlSupport>
 							<removeJmxSupport>true</removeJmxSupport>
+							<imageName>nd-${project.artifactId}-${project.version}-${os.name}</imageName>
 						</configuration>
 					</plugin>
 				</plugins>
