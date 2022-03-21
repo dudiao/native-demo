@@ -51,13 +51,7 @@ public class JacksonConfig {
 
   static class JavaTimeModule extends SimpleModule {
 
-    private String datetimePattern;
-
     public JavaTimeModule(String datetimePattern) {
-      this.datetimePattern = datetimePattern;
-    }
-
-    public JavaTimeModule() {
       super(PackageVersion.VERSION);
       this.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(datetimePattern)));
       this.addSerializer(LocalDate.class, new LocalDateSerializer(DateTimeFormatter.ofPattern(NORM_DATE_PATTERN)));
@@ -66,5 +60,6 @@ public class JacksonConfig {
       this.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern(NORM_DATE_PATTERN)));
       this.addDeserializer(LocalTime.class, new LocalTimeDeserializer(DateTimeFormatter.ofPattern(NORM_TIME_PATTERN)));
     }
+
   }
 }
