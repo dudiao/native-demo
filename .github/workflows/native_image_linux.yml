@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v3.0.0
       with:
         name: native-demo
-        path: target/native-demo
+        path: target/nd-native-demo-*
