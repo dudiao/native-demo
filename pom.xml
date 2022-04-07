@@ -5,18 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.4</version>
+		<version>2.6.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cn.nboot.native</groupId>
 	<artifactId>native-demo</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<name>native-demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 		<repackage.classifier/>
-		<spring-native.version>0.11.3</spring-native.version>
+		<spring-native.version>0.11.4</spring-native.version>
 		<dockerhub.url>https://index.docker.io/v1/</dockerhub.url>
 		<maven.test.skip>true</maven.test.skip>
 	</properties>
