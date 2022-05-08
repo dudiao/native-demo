@@ -17,6 +17,9 @@
 		<java.version>11</java.version>
 		<repackage.classifier/>
 		<spring-native.version>0.11.4</spring-native.version>
+
+		<erupt.version>1.10.7</erupt.version>
+
 		<dockerhub.url>https://index.docker.io/v1/</dockerhub.url>
 		<maven.test.skip>true</maven.test.skip>
 	</properties>
@@ -78,6 +81,31 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!--用户权限管理-->
+		<dependency>
+			<groupId>xyz.erupt</groupId>
+			<artifactId>erupt-upms</artifactId>
+			<version>${erupt.version}</version>
+		</dependency>
+		<!--接口数据安全-->
+		<dependency>
+			<groupId>xyz.erupt</groupId>
+			<artifactId>erupt-security</artifactId>
+			<version>${erupt.version}</version>
+		</dependency>
+		<!--后台WEB界面-->
+		<dependency>
+			<groupId>xyz.erupt</groupId>
+			<artifactId>erupt-web</artifactId>
+			<version>${erupt.version}</version>
+		</dependency>
+		<!--服务监控模块-->
+		<dependency>
+			<groupId>xyz.erupt</groupId>
+			<artifactId>erupt-monitor</artifactId>
+			<version>${erupt.version}</version>
 		</dependency>
 
 		<dependency>

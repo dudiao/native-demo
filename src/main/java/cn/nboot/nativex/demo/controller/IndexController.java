@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class IndexController {
 
-  @GetMapping("/")
+  @GetMapping("/time")
   public String index() {
     return String.format("success! time %s", LocalDateTime.now());
   }

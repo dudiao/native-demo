@@ -35,3 +35,4 @@ build/
 ### other ###
 /logs
 /db
+.erupt
