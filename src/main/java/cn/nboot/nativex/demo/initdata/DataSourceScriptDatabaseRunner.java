@@ -26,7 +26,7 @@ import java.util.stream.Stream;
  * @since 2022/3/19 00:46
  */
 @Slf4j
-@Component
+//@Component
 public class DataSourceScriptDatabaseRunner implements ApplicationRunner {
   @Autowired
   private DataSource dataSource;

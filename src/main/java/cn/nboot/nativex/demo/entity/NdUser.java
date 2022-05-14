@@ -31,7 +31,7 @@ public class NdUser {
   @Column(length = 128)
   private String wechatOpenid;
 
-  @Column(columnDefinition = "text comment '说明'")
+//  @Column(columnDefinition = "text comment '说明'")
   private String description;
 
   @CreatedDate

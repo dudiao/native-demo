@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <base href="${base}/">
+    <meta charset="UTF-8"/>
+    <title>amis demo</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+    <link href="amis/sdk.css" rel="stylesheet"/>
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!--<link rel="stylesheet" href="amis/sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+
+    <!--    <link href="amis/cxd.css" rel="stylesheet" />-->
+    <!--    <link href="amis/dark.css" rel="stylesheet" />-->
+    <!--    <link href="amis/antd.css" rel="stylesheet" />-->
+
+    <style>
+        html, body, .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="app-wrapper" id="root"></div>
+<script src="amis/sdk.js"></script>
+<script type="text/javascript">
+    function getQueryVariable(variable) {
+        let query = window.location.search.substring(1);
+        console.log(query);
+        let vars = query.split("&");
+        for (let i = 0; i < vars.length; i++) {
+            let pair = vars[i].split("=");
+            if (pair[0] === variable) {
+                return pair[1];
+            }
+        }
+        return false;
+    }
+
+    (function () {
+        let amis = amisRequire('amis/embed');
+        let pageId = getQueryVariable("_pageId");
+        // "https://aisuda.bce.baidu.com/",
+
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            "type": "page",
+            "body": [
+                {
+                    "type": "form",
+                    "title": "过滤条件",
+                    "target": "chart1,chart2",
+                    "submitOnInit": true,
+                    "className": "m-b",
+                    "wrapWithPanel": false,
+                    "mode": "inline",
+                    "body": [
+                        {
+                            "type": "input-date",
+                            "label": "开始日期",
+                            "name": "starttime",
+                            "value": "-8days",
+                            "maxDate": "${endtime}"
+                        },
+                        {
+                            "type": "input-date",
+                            "label": "结束日期",
+                            "name": "endtime",
+                            "value": "-1days",
+                            "minDate": "${starttime}"
+                        },
+                        {
+                            "type": "input-text",
+                            "label": "条件",
+                            "name": "name",
+                            "addOn": {
+                                "type": "submit",
+                                "label": "搜索",
+                                "level": "primary"
+                            }
+                        }
+                    ],
+                    "actions": []
+                },
+                {
+                    "type": "divider"
+                },
+                {
+                    "type": "grid",
+                    "className": "m-t-lg",
+                    "columns": [
+                        {
+                            "type": "chart",
+                            "name": "chart1",
+                            "initFetch": false,
+                            "api": "https://aisuda.bce.baidu.com/amis/api/mock2/chart/chart?name=$name&starttime=${starttime}&endtime=${endtime}"
+                        },
+                        {
+                            "type": "chart",
+                            "name": "chart2",
+                            "initFetch": false,
+                            "api": "https://aisuda.bce.baidu.com/amis/api/mock2/chart/chart2?name=$name"
+                        }
+                    ]
+                }
+            ]
+        };
+        let amisScoped = amis.embed('#root', amisJSON);
+    })();
+</script>
+</body>
+</html>
