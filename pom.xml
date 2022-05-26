@@ -88,6 +88,12 @@
             <groupId>xyz.erupt</groupId>
             <artifactId>erupt-upms</artifactId>
             <version>${erupt.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--接口数据安全-->
         <dependency>
@@ -275,11 +281,12 @@
                             <removeJmxSupport>true</removeJmxSupport>
                             <!--可执行文件的名字-->
                             <imageName>nd-${project.artifactId}-${project.version}</imageName>
-                            <buildArgs>
-                                --trace-object-instantiation=org.apache.commons.logging.impl.SLF4JLocationAwareLog \
-                                --initialize-at-build-time=org.apache.commons.logging.impl.SLF4JLocationAwareLog \
-                                --link-at-build-time
-                            </buildArgs>
+                            <!--<buildArgs>
+                                -H:+ReportExceptionStackTraces -H:+PrintAnalysisCallTree \
+                                &#45;&#45;trace-object-instantiation=org.apache.commons.logging.impl.SLF4JLocationAwareLog \
+                                &#45;&#45;initialize-at-build-time=org.apache.commons.logging.impl.SLF4JLocationAwareLog \
+                                &#45;&#45;link-at-build-time &#45;&#45;verbose
+                            </buildArgs>-->
                         </configuration>
                     </plugin>
                 </plugins>
