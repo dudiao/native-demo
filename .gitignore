@@ -36,3 +36,4 @@ build/
 /logs
 /db
 .erupt
+application-dev.properties
